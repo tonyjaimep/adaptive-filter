@@ -1,0 +1,41 @@
+body,
+html,
+#root {
+  height: 100%;
+}
+
+body {
+  background-color: #080f0f;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.scene-container {
+  height: 80vh;
+  width: 80vw;
+  background-color: #eff2c0;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.data-setup-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.data-canvas-container {
+  height: 350px;
+  width: 100%;
+}
+
+button {
+  background-color: transparent;
+  border: 0;
+  font-family: monospace;
+}
