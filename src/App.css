@@ -30,12 +30,13 @@ body {
 }
 
 .data-canvas-container {
-  height: 350px;
-  width: 100%;
+  width: 900px;
 }
 
 button {
   background-color: transparent;
   border: 0;
-  font-family: monospace;
+  font-family: monospace !important;
+  font-size: 1.5rem;
+  padding: 1rem;
 }

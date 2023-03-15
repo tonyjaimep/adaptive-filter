@@ -5,11 +5,12 @@ import {
   useNoisySignal,
   useSourceSignal,
 } from "../../store/data";
+import { colors } from "../signal-line/constants";
 import { MultiSignalLine } from "../signal-line/multi-signal-line";
 
 const NOISE_INTENSITY = 0.2;
 const SAMPLE_SIZE = 3;
-const LEARNING_RATE = 0.4;
+const LEARNING_RATE = 0.3;
 
 let weights = Array(SAMPLE_SIZE)
   .fill(0)
@@ -20,6 +21,8 @@ const activation = Math.tanh;
 type TrainingSceneProps = {
   onNextScene: () => void;
 };
+
+const lineColors = [colors.source, colors.noisy];
 
 export const TrainingScene = ({ onNextScene }: TrainingSceneProps) => {
   const dispatch = useDispatch();
@@ -67,12 +70,12 @@ export const TrainingScene = ({ onNextScene }: TrainingSceneProps) => {
       payload: newNoisyData,
     });
 
-    train(sourceSignal);
+    train(newNoisyData);
   }, [dispatch, train, sourceSignal]);
 
   return (
     <div className="data-canvas-container">
-      <MultiSignalLine data={[sourceSignal, noisySignal]} />
+      <MultiSignalLine data={[sourceSignal, noisySignal]} colors={lineColors} />
       <button onClick={onNextScene}>See output</button>
     </div>
   );

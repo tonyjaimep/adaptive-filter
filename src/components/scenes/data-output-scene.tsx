@@ -6,11 +6,14 @@ import {
   useSmoothSignal,
   useSourceSignal,
 } from "../../store/data";
+import { colors } from "../signal-line/constants";
 import { MultiSignalLine } from "../signal-line/multi-signal-line";
 
 type DataOutputSceneProps = {
   onNextScene: () => void;
 };
+
+const signalColors = [colors.smooth, colors.source, colors.noisy];
 
 export const DataOutputScene = ({ onNextScene }: DataOutputSceneProps) => {
   const dispatch = useDispatch();
@@ -29,7 +32,10 @@ export const DataOutputScene = ({ onNextScene }: DataOutputSceneProps) => {
   return (
     <>
       <div className="data-canvas-container">
-        <MultiSignalLine data={[smoothSignal, sourceSignal, noisySignal]} />
+        <MultiSignalLine
+          data={[smoothSignal, sourceSignal, noisySignal]}
+          colors={signalColors}
+        />
       </div>
       <button onClick={onStartOver}>Start over</button>
     </>

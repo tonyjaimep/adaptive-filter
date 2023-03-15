@@ -1,9 +1,13 @@
 import { Line } from "react-chartjs-2";
 import { options } from "./constants";
 
-const colors = ["#FF8360", "#A52422", "#88A"];
-
-export const MultiSignalLine = ({ data }: { data: number[][] }) => {
+export const MultiSignalLine = ({
+  data,
+  colors,
+}: {
+  data: number[][];
+  colors: string[];
+}) => {
   const lineData = {
     labels: Object.keys(data[0]),
     datasets: data.map((signal, index) => ({

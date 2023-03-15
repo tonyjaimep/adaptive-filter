@@ -1,3 +1,9 @@
+export const colors = {
+  source: "blue",
+  noisy: "hsl(80deg, 70%, 40%)",
+  smooth: "orangered",
+};
+
 export const options = {
   responsive: true,
   plugins: {
@@ -25,8 +31,8 @@ export const options = {
       pointStyle: false,
     },
     line: {
-      borderColor: "blue",
-      borderWidth: 2,
+      borderColor: colors.source,
+      borderWidth: 1,
     },
   },
 } as const;

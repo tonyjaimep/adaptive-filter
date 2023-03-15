@@ -9,7 +9,6 @@ import {
 } from "chart.js";
 import App from "./App";
 import "normalize.css";
-import "./index.css";
 
 ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement);
 

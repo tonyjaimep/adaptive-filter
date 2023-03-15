@@ -66,9 +66,13 @@ export const DataSetupScene = ({ onNextScene }: DataSetupSceneProps) => {
           onMouseUp={stopCapturingValues}
         />
       </div>
-      <p className="source-signal-length">{data.length}</p>
-      <button onClick={resetState}>Reset state</button>
-      <button onClick={submit}>Done</button>
+      <p className="source-signal-length">Signal size: {data.length}</p>
+      <button type="button" onClick={resetState}>
+        Reset state
+      </button>
+      <button type="button" onClick={submit}>
+        Done
+      </button>
     </>
   );
 };

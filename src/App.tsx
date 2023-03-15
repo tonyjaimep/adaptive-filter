@@ -1,8 +1,9 @@
 import { useCallback, useState } from "react";
-import "./App.css";
 import { SceneSwitch } from "./components/scenes/switch";
 import { AppScene, nextScene } from "./constants/scenes";
 import { SignalDataProvider } from "./store/data";
+
+import "./App.css";
 
 function App() {
   const [scene, setScene] = useState(AppScene.DATA_SETUP);
